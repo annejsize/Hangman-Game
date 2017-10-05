@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+  </head>
+  <body>
+
+    <h1>It's a Hangman Game full of Fright!</h1>
+    <p>Press any key to start the game.</p>
+    <p>Let's see if you can guess the word before you run out of guesses!</p>
+
+    <p id="score"></p>
+    <p id="currentWord"></p>
+    <p id="nbrguessleft"></p>
+    <p id="guesses"></p>
+    <p id="selectedword"></p>
+    <p id="demo"></p>
+
+  <script type="text/javascript">
+
+      // VARIABLES
+      // ==========================================================================
+
+      // Create the array with frightful words for our game.
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var scaryWords = ["ghosts", "zombies", "witches", "Trump", "clowns"];
+      console.log(scaryWords);
+      // Delcare global variable here to ensure code has access to it.
+      var selectedWord;
+      var userInput;
+      // Variable to help with selecting the word to be featured.
+      var wordIndex = 0;
+      
+      // Variable for score: game starts with a score of zero.
+      var score = 0;
+      // Variable for number of guesses, starts with 10 guesses.
+      var guessesLeft = 15;
+      // Variable containing all the letters the user has guessed.
+      var guessedLetters = []
+
+
+      // FUNCTIONS
+      // ==============================================================================
+
+      // Select the word to be guessed at start of the game - this keeps on going until all the words in the arry has been used.
+      function featureWord() {
+        if (wordIndex <= (scaryWords.length - 1)) {
+          document.querySelector("#selectedword").innerHTML = scaryWords[wordIndex];
+          selectedWord = scaryWords[wordIndex];
+          
+          // // Create new array that indexes each letter within the word to compare later in the code.          
+          // var parsedWord = scaryWords[wordIndex];
+          //   for (var i = 0; i < parsedWord.length; i++) {
+          //     console.log(parsedWord.charAt(i));
+        }
+        else {
+          document.querySelector("#selectedword").innerHTML = "Game Over!";
+        }
+      }
+
+      function myFunction() {
+        // var n = selectedWord.includes(userInput);
+          console.log(selectedWord);
+          console.log(selectedWord.includes("userInput"));
+          console.log(typeof(selectedWord));
+          console.log(typeof(userInput));
+
+      }
+
+
+
+      // MAIN PROCESS
+      // ==============================================================================
+
+
+      // Capture which key the user has selected:
+          document.onkeyup = function(event) {
+            var userInput = String.fromCharCode(event.keyCode).toLowerCase();
+            console.log(userInput);
+            
+            featureWord(); 
+            myFunction();
+          }
+      // This calls the fuction that selects the word to be guessed by the user.
+          featureWord();  //Checked in console.log
+      
+      // Create a loop where the letter the user selected is compared to those within the letter array, to see if there is a match. 
+          // function myFunction() {
+          //   var n = selectedWord.includes(userInput);
+          //   console.log(n);
+          // }
+
+          //   guessesLeft--;
+          // }
+
+          // else {
+          //   guessesLeft--;
+          //   guessedLetters.push(UserInput);
+          //   console.log(guessedLetters);
+          // }
+
+       
+    </script>
+    
+  </body>
+</html>

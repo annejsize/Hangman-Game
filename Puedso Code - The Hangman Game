@@ -1,0 +1,44 @@
+Puedso Code - The Hangman Game
+***Remember: global variables, then objects, then calls.***
+Game:
+
+On page, tell user to press any key to get started.
+
+Arrays:
+alphaArray: contains all of the letters in the alphabet.
+hallowArray: contains all the words to be presented in the game.
+usedLettersArray: contains the letters already guessed.
+
+
+Variables:
+userAns: contains the letter of the key that was pressed by the user.
+winScore: contains the score, +1 is added for every correctly gussed letter
+
+Functions (save as methods, call underneath your object delcaration using event listeners):
+
+1. When user inputs a letter, the input is run against the 'answer' through a function that compares. If it's true (the input answer matches a letter in the word),
+	
+	Set your function.
+
+	All of this continues until word is guessed OR number of guesses remaining runs out
+			a. number of guesses -1 (this happens regardless whether answer is correct or not)
+			b. display letter on screen, in the 'Current Word' area.
+
+
+		else, 
+			a. letter is displayed on screen but in the 'letters already guessed' area,
+			b.
+
+
+Function: insert the user's input in a variable. Pull selected word and get word legnth (to determine how long the loop will run). Compare the input variable and selected word variable to see if the latter matches any of the letters in the former. 
+	1. If there IS a match, 
+		a. win score is increased by one.
+		b. winning letter is displayed in the 'current word' area
+		c. number of guesses decreases by one
+
+		*Also need to determine how the win is identified - I suspect something to do with the word legnth - when the max has been reached, one can assume that the word has been completed and the user has won.
+
+	2. else (there isn't a match),
+		a. unmatched letter is displayed in the 'letters already guessed' area
+		b. number of guesses decreased by one,
+
